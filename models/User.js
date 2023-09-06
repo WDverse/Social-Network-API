@@ -1,39 +1,47 @@
-const { Schema, Model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema({
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-    trimmed: [true, "Username required"],
-  },
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      unique: true,
+      required: true,
+      trimmed: [true, "Username required"],
+    },
 
-  email: {
-    type: String,
-    unique: true,
-    validate: {
-      validator: function (email) {
-        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email);
+    email: {
+      type: String,
+      unique: true,
+      validate: {
+        validator: function (email) {
+          return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email);
+        },
+        message: (props) => `${props.value} is not a valid email!`,
       },
-      message: (props) => `${props.value} is not a valid email!`,
+      required: [true, "User email required"],
     },
-    required: [true, "User email required"],
+
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Thoughts",
+      },
+    ],
+
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
   },
-
-  thoughts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Thoughts",
+  {
+    toJSON: {
+      virtuals: true,
     },
-  ],
-
-  friends: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
-});
+    id: false,
+  }
+);
 
 userSchema
   .virtual("friendCount")

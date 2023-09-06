@@ -30,7 +30,7 @@ const reactionSchema = new Schema(
 
 reactionSchema.virtual("formattedCreatedAt").get(function () {
   const date = new Date(this.createdAt);
-  const formattedDate = `${dtae.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+  const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
   return formattedDate;
 });
 

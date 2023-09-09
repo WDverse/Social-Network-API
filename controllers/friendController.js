@@ -18,12 +18,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Remove friend. This method finds the user based on ID. It then updates the friends array associated with the user in question by removing it's friendId from the friends array.
+  // Remove friend. This method finds the user based on ID. It then updates the friends array associated with the user in question by removing it's Id from the friends array.
   async removeFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { friends: { friendId: req.params.userId } } },
+        { $pull: { friends: { userId: req.params.userId } } },
         { runValidators: true, new: true }
       );
 

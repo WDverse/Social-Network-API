@@ -1,8 +1,8 @@
-import { connect, connection } from 'mongoose';
+const mongoose = require('mongoose');
 
 const connectionString =
   process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialNetwork';
 
-connect(connectionString);
+mongoose.connect(connectionString);
 
-export default connection;
+module.exports = mongoose.connection;

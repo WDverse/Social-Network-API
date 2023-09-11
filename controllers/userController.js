@@ -1,8 +1,6 @@
-import { User, Thought } from '../models';
+const { User, Thought } = require('../models');
 
-export
-  // Get all users
-  async function getUsers(req, res) {
+async function getUsers(req, res) {
   try {
     const users = await User.find();
     res.json(users);
@@ -10,9 +8,8 @@ export
     res.status(500).json(err);
   }
 }
-export
-  // Get a single user
-  async function getSingleUser(req, res) {
+
+async function getSingleUser(req, res) {
   try {
     const user = await User.findOne({ _id: req.params.userId })
       .select('-__v');
@@ -26,9 +23,8 @@ export
     res.status(500).json(err);
   }
 }
-export
-  // create a new user
-  async function createUser(req, res) {
+
+async function createUser(req, res) {
   try {
     const user = await User.create(req.body);
     res.json(user);
@@ -36,7 +32,8 @@ export
     res.status(500).json(err);
   }
 }
-export async function updateUser(req, res) {
+
+async function updateUser(req, res) {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -54,9 +51,8 @@ export async function updateUser(req, res) {
     res.status(500).json(err);
   }
 }
-export
-  // Delete a user and associated thought
-  async function deleteUser(req, res) {
+
+async function deleteUser(req, res) {
   try {
     const user = await User.findOneAndDelete({ _id: req.params.userId });
 
@@ -70,7 +66,8 @@ export
     res.status(500).json(err);
   }
 }
-export async function addFriend(req, res) {
+
+async function addFriend(req, res) {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -87,9 +84,8 @@ export async function addFriend(req, res) {
     res.status(500).json(err);
   }
 }
-export
-  // Remove friend. This method finds the user based on ID. It then updates the friends array associated with the user in question by removing it's Id from the friends array.
-  async function removeFriend(req, res) {
+
+async function removeFriend(req, res) {
   try {
     const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -106,3 +102,13 @@ export
     res.status(500).json(err);
   }
 }
+
+module.exports = {
+  getUsers,
+  getSingleUser,
+  createUser,
+  updateUser,
+  deleteUser,
+  addFriend,
+  removeFriend,
+};

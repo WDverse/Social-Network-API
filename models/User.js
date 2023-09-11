@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-import Thought from "./Thought";
+const { Schema, model } = require("mongoose");
+// const Thought = require("./Thought");
 
 const userSchema = new Schema(
   {
@@ -54,4 +54,4 @@ userSchema
 // Initialize our User model
 const User = model("User", userSchema);
 
-export default User;
+module.exports = User;

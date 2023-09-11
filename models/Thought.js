@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-import Reaction from "./Reaction";
+const { Schema, model } = require("mongoose");
+const Reaction = require("./Reaction");
 
 const thoughtSchema = new Schema(
   {
@@ -44,4 +44,4 @@ thoughtSchema
 
 const Thought = model("Thought", thoughtSchema);
 
-export default Thought;
+module.exports = Thought;

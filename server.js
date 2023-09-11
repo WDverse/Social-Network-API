@@ -1,7 +1,8 @@
-import express, { urlencoded, json } from "express";
-import { once } from "./config/connection.js";
-import models from "./models/index.js";
-import routes from "./routes/index.js";
+const express = require("express");
+const db = require("./config/connection.js");
+const { urlencoded, json } = require("express");
+const models = require("./models/index.js");
+const routes = require("./routes/index.js");
 
 const cwd = process.cwd();
 
@@ -12,7 +13,7 @@ app.use(urlencoded({ extended: true }));
 app.use(json());
 app.use(routes);
 
-once("open", () => {
+db.once("open", () => {
   app.listen(PORT, () => {
     console.log(`API server running on port ${PORT}!`);
   });

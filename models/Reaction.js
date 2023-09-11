@@ -1,4 +1,4 @@
-import { Schema, Types } from "mongoose";
+const { Schema, Types } = require("mongoose");
 
 const reactionSchema = new Schema(
   {
@@ -34,4 +34,4 @@ reactionSchema.virtual("formattedCreatedAt").get(function () {
   return formattedDate;
 });
 
-export default reactionSchema;
+module.exports = reactionSchema;

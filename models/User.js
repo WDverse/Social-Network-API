@@ -1,4 +1,5 @@
-const { Schema, model } = require("mongoose");
+import { Schema, model } from "mongoose";
+import Thought from "./Thought";
 
 const userSchema = new Schema(
   {
@@ -24,7 +25,7 @@ const userSchema = new Schema(
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Thoughts",
+        ref: "Thought",
       },
     ],
 
@@ -53,4 +54,4 @@ userSchema
 // Initialize our User model
 const User = model("User", userSchema);
 
-module.exports = User;
+export default User;

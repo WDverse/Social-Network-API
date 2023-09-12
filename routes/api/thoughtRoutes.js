@@ -9,10 +9,10 @@ router
   .put(thoughtController.updateThought)
   .delete(thoughtController.deleteThought);
 
-// /api/applications/:applicationId/tags
+// /api/thoughts/:thoughtId/reactions
 router.route("/:thoughtId/reactions").post(thoughtController.addReaction);
 
-// /api/applications/:applicationId/tags/:tagId
+// /api/thoughts/:thoughtId/reactions/:reactionid
 router.route("/:thoughtId/reactions/:reactionId").delete(thoughtController.removeReaction);
 
 module.exports = router;

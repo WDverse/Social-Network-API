@@ -66,7 +66,7 @@ async function updateThought(req, res) {
 
 async function deleteThought(req, res) {
   try {
-    const thought = await Thought.findOneAndRemove({
+    const thought = await Thought.findOneAndDelete({
       _id: req.params.thoughtId,
     });
 
@@ -75,14 +75,14 @@ async function deleteThought(req, res) {
     }
 
     const user = await User.findOneAndUpdate(
-      { thoughts: req.params.thoughtId },
+      {_id: req.body.userId  },
       { $pull: { thoughts: req.params.thoughtId } },
       { new: true }
     );
 
     if (!user) {
       return res.status(404).json({
-        message: "Thought created but no user with this id!",
+        message: "Thought deleted but no user with this id!",
       });
     }
 

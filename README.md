@@ -54,7 +54,7 @@ Added comments with the help of ChatGPT
 
 The following video shows the application's functionality:  
 
-[Walkthrough Video]()
+[Walkthrough Video](https://watch.screencastify.com/v/ju3c6CThP5DeBcPaoqPj)
 
 ## References
 

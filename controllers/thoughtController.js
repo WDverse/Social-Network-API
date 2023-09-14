@@ -75,14 +75,14 @@ async function deleteThought(req, res) {
     }
 
     const user = await User.findOneAndUpdate(
-      {_id: req.body.userId  },
+      { thoughts: req.params.thoughtId },
       { $pull: { thoughts: req.params.thoughtId } },
       { runValidators: true, new: true }
     );
 
     if (!user) {
       return res.status(404).json({
-        message: "Thought deleted but no user with this id!",
+        message: "Thought deleted but found no user with this id!",
       });
     }
 

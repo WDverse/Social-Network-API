@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a backend application built for a Social Network Application, using Node.js, Express.js, MongoDB and Mongoose. The application allows the user to view,post, update and delete information in the social network database using Insomnia.
+This is a backend application built for a Social Network Application, using Node.js, Express.js, MongoDB and Mongoose. The application allows the user to view, post, update and delete information in the social network database using Insomnia.
 
 ## Table of Contents
 

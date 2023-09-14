@@ -77,7 +77,7 @@ async function deleteThought(req, res) {
     const user = await User.findOneAndUpdate(
       {_id: req.body.userId  },
       { $pull: { thoughts: req.params.thoughtId } },
-      { new: true }
+      { runValidators: true, new: true }
     );
 
     if (!user) {

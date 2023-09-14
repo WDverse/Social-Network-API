@@ -86,10 +86,9 @@ async function addFriend(req, res) {
 
 async function removeFriend(req, res) {
   try {
-    const user = await User.findOneAndDelete({ _id: { $in: user.friends } });
-    await User.findOneAndUpdate(
+    const user = await User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $pull: { friends: { userId: req.params.userId } } },
+      { $pull: { friends: req.params.friendId } },
       { runValidators: true, new: true }
     );
 

@@ -11,8 +11,8 @@ const thoughtSchema = new Schema(
     thoughtText: {
       type: String, // Data type: String
       required: true, // It is required.
-      min: 1, // Minimum length of 1 character.
-      max: 280, // Maximum length of 280 characters.
+      minLength: 1, // Minimum length of 1 character.
+      maxLength: 280, // Maximum length of 280 characters.
     },
     // Define a field for the creation timestamp of the thought.
     createdAt: {

@@ -14,7 +14,7 @@ This is a backend application built for a Social Network Application, using Node
 
 - [Credit](#credit)
 
-- [Tests](#tests)
+- [Deployment](#deployment)
 
 - [References](#references)
 
@@ -30,7 +30,14 @@ To download Insomnia:
 
 [Download Insomnia](https://insomnia.rest/download)
 
-## Usage
+## Usage  
+
+First, clone the repository. And run:  
+
+```
+npm i
+```
+to install all dependencies.
 
 To start the application, run the following in your terminal:
 
@@ -50,7 +57,7 @@ AskBCS tutors
 
 Added comments with the help of ChatGPT
 
-## Tests
+## Deployment
 
 The following video shows the application's functionality:  
 

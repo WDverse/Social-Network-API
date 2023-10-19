@@ -68,6 +68,6 @@ The following video shows the application's functionality:
 
 ## References
 
-Bootcamp Course material
+Bootcamp course material
 
 [Mongoose Validation](https://mongoosejs.com/docs/validation.html)

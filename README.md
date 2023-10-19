@@ -30,14 +30,17 @@ To download Insomnia:
 
 [Download Insomnia](https://insomnia.rest/download)
 
-## Usage  
+## Usage
 
-First, clone the repository. And run:  
+First, clone the repository. And run:
 
 ```
 npm i
 ```
+
 to install all dependencies.
+
+Then set environment variables.
 
 To start the application, run the following in your terminal:
 
@@ -59,12 +62,12 @@ Added comments with the help of ChatGPT
 
 ## Deployment
 
-The following video shows the application's functionality:  
+The following video shows the application's functionality:
 
 [Walkthrough Video](https://watch.screencastify.com/v/izwgGqcDH3zMSjKjLIks)
 
 ## References
 
-Course material
+Bootcamp Course material
 
 [Mongoose Validation](https://mongoosejs.com/docs/validation.html)
